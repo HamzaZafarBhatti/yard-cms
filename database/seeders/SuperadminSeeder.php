@@ -14,10 +14,11 @@ class SuperadminSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = Admin::create([
+        $admin = \App\Models\User::create([
             'name' => 'Super Admin',
             'email' => 'superadmin@admin.com',
             'password' => bcrypt('password'),
+            'role' => 'customer',
         ]);
 
         $admin->assignRole('Super admin');
